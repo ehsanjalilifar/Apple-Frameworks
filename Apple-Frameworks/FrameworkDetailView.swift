@@ -15,20 +15,7 @@ struct FrameworkDetailView: View {
     
     var body: some View {
         VStack() {
-            Spacer()
-            HStack {
-                Spacer()
-                Button {
-                    isShowingDetailView = false
-                } label: {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color(.label)) // Makes it white in the dark mode and black in the light mode
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44) // The standard size for easy tap. Users won't miss the X button even they don't hit it perfectly.
-                    
-                }
-            }
-            .padding()
+            XDismissButton(isShowingDetailView: $isShowingDetailView)
             FrameworkTitleView(framework: framework)
             Text(framework.description)
                 .padding()
